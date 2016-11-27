@@ -1,3 +1,3 @@
 To install React Bindings
 
-typings install dt~react --global --save
+typings install dt~react --global --save 1
