@@ -1,8 +1,60 @@
 <html>
     <head>
         <!-- taken from https://facebook.github.io/react/docs/installation.html -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
         <script src="https://unpkg.com/react@15/dist/react.js"></script>
-<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <!-- polyfill for window.fetch -->
+        <script src="js/fetch.js"></script>
+
+        <script type="text/babel">
+            var AppItem = React.createClass({
+                render() {
+                    return <div className="appsitem">
+                        <div className="appslogo">
+                            xxxx
+                        </div>
+                        <div className="appsdesc">{this.props.appitem.text}</div>
+                        </div>;
+                }
+            });            
+        // this is a sample of the JSON returned
+            var Apps = React.createClass({
+                getApps() {
+                    fetch('sampleappdata.json').then(function(response){
+                        return response.json()
+                    });
+
+                },
+                getApps1() {                    
+                    return [
+                        { _id:1, text: 'this is app 1'},
+                        { _id:2, text: 'this is app 2'}
+                    ];
+                },
+
+                renderApps() {
+                    return this.getApps().map((appitem) => (
+                        <AppItem key={appitem._id} appitem={appitem} />
+                    ));
+                },
+
+                render() {
+                    return <div className="appsitem">{this.renderApps()}</div>;
+                }
+            });
+
+            ReactDOM.render(
+                <Apps name="component" />, 
+                document.getElementById('root')
+            );
+
+           
+        </script>
     </head>
     Hello World
+
+    <div id="root">
+        <!-- this portion is managed by react -->
+    </div>
 </html>
