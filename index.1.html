@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <!-- taken from https://facebook.github.io/react/docs/installation.html -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <!-- Roboto font -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <!-- polyfill for window.fetch -->
+        <script src="js/fetch.js"></script>
+        <script type="text/babel">
+           
+
+            var AppItem = React.createClass({
+                getInitialState() {
+                    return {
+                        choiceMade : false
+                    };
+                },
+                onRadio() {
+                    console.log('choice made');
+                    this.setState({                        
+                        choiceMade: true
+                    });
+                },
+                render() {
+                    return <div className="appsitem">
+                        <div className="appslogo">
+                            xxxx
+                        </div>
+                        <input type="radio" name="Option 1" value="option1" defaultChecked="false" onChange={this.onRadio} />Label 1 <br />
+                        <input type="radio" name="Option 2" value="option2" defaultChecked="false" onChange={this.onRadio} />Label 2
+                        <div className="appsdesc">{this.props.text}</div>
+                        { /* Submit button by default is disabled until option is checked */ }
+                        <input type="submit" text="Submit" disabled={!this.state.choiceMade} />
+                        </div>;
+                }
+            });                     
+
+            ReactDOM.render(
+                <AppItem name="component" text="hello" />, 
+                document.getElementById('root')
+            );
+
+           
+        </script>
+    </head>
+    Hello World
+
+    <div id="root">
+        <!-- this portion is managed by react -->
+    </div>
+</html>

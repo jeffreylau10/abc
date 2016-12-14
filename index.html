@@ -4,10 +4,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
         <script src="https://unpkg.com/react@15/dist/react.js"></script>
         <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <!-- Roboto font -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <!-- polyfill for window.fetch -->
         <script src="js/fetch.js"></script>
-
+        <!-- material-ui -->
+        <script src="js/material-ui.js"></script>
         <script type="text/babel">
+            //import React from 'react';
+            //import FlatButton from 'material-ui/flat-button';
+
             var AppItem = React.createClass({
                 render() {
                     return <div className="appsitem">
@@ -18,7 +24,7 @@
                         </div>;
                 }
             });            
-        // this is a sample of the JSON returned
+            // this is a sample of the JSON returned
             var Apps = React.createClass({
                 getInitialState() {
                     return { 
@@ -70,7 +76,8 @@
 
                 render() {
                     console.log('render first?');
-                    return <div className="appsitem">{this.renderApps()}</div>;
+                    return <div><FlatButton label="Default" /></div>;
+                    //return <div className="appsitem">{this.renderApps()}</div>;
                     //return <div className="appsitem"></div>;
                 }
             });
