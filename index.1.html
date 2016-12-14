@@ -18,6 +18,8 @@
                 ],
                 componentVisibilityChanged() {
                     console.log('scroll into view');
+                    // once we get the value once, we don't need to use this anymore
+                    this.disableVisibilityHandling();
                 },
                 getInitialState() {
                     return {

@@ -23,3 +23,5 @@ Type or select "Express: Host current workspace and open in browser"
 
 index.1.html > sample of a page with Submit button disabled and selectable upon radio button select (using initial state)
 also with mixin for ComponentVisibilityMixin to check if the scroll was into view
+
+Waiting placeholder - https://matthewroach.github.io/react-placeholder/

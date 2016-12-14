@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <!-- taken from https://facebook.github.io/react/docs/installation.html -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+        <script type="text/babel">
+           var sampleText = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?";
+
+           var AppItem = React.createClass({
+                render() {
+                    return <p>{sampleText}</p>;
+                }
+           });
+
+            var App = React.createClass({
+                  getInitialState() {
+                    return {
+                        choiceMade : false
+                    };
+                },
+
+                onRadio() {
+                    console.log('choice made');
+                    this.setState({                        
+                        choiceMade: true
+                    });
+                },
+                render() {
+                    return <div className="appsitem">
+                        <div className="appslogo">
+                            xxxx
+                        </div>
+                        <AppItem id="1" />
+                        <AppItem id="2" />
+                        <AppItem id="2" />
+                        <AppItem id="2" />
+                        <AppItem id="2" />
+                        <AppItem id="2" />
+                        <AppItem id="2" />
+                        
+                        </div>
+                        ;
+                }
+            });                     
+
+            ReactDOM.render(
+                <App name="component" text="hello" />, 
+                document.getElementById('root')
+            );
+
+           
+        </script>
+    </head>
+    Hello World
+
+    <div id="root">
+        <!-- this portion is managed by react -->
+    </div>
+</html>
