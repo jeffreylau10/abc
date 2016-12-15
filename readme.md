@@ -40,3 +40,18 @@ Sample WW code, there must be a script with priority 0
               {"src": "/siteassets/test.js", "priority":2}             
              ]'>
   </script></div>
+
+          
+https://blogs.msdn.microsoft.com/mvpawardprogram/2013/11/25/using-sharepoint-propertybag-in-the-context-of-search/
+To allow for propertybags to be indexed
+$spweb.AllProperties["xx"] = "xx"        
+$spweb.includeindexproperty.add("xx")
+$spweb.Update
+
+hide a splist column
+http://stackoverflow.com/questions/290322/sharepoint-make-a-list-field-hidden-programmatically
+SPList myList;
+...
+SPField titleField = myList.Fields.GetField("Title");
+field.Hidden = true;
+field.Update();

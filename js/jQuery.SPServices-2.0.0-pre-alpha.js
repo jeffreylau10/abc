@@ -2819,7 +2819,12 @@
 	                var thisObjectName = thisMapping && thisMapping.mappedName ? thisMapping.mappedName : opt.removeOws ? thisAttrName.split("ows_")[1] : thisAttrName;
 	                var thisObjectType = thisMapping !== undefined ? thisMapping.objectType : undefined;
 	                if (opt.includeAllAttrs || thisMapping !== undefined) {
-	                    row[thisObjectName] = attrToJson(rowAttrs[attrNum].value, thisObjectType);
+						console.log('attrToJson');
+						console.log(thisObjectType);
+						console.log(rowAttrs[attrNum].value);
+						//if (thisObjectType !== 'Lookup') {
+	                    	row[thisObjectName] = attrToJson(rowAttrs[attrNum].value, thisObjectType);
+						//}
 	                }
 	            }
 	            // Push this item into the JSON Object
@@ -2834,12 +2839,12 @@
 
 
 	    function attrToJson(v, objectType) {
-	        function identity(x) { return x; }
+	        /*function identity(x) { return x; }
 
 	        var result = {
-
+*/
 	            /* Generic [Reusable] Functions */
-	            "Integer": intToJsonObject,
+/*	            "Integer": intToJsonObject,
 	            "Number": floatToJsonObject,
 	            "Boolean": booleanToJsonObject,
 	            "DateTime": dateToJsonObject,
@@ -2852,9 +2857,9 @@
 	            "Attachments": attachmentsToJsonObject,
 	            "URL": urlToJsonObject,
 	            "JSON": jsonToJsonObject, // Special case for text JSON stored in text columns
-
+*/
 	            /* These objectTypes reuse above functions */
-	            "Text": result.Default,
+	            /*"Text": result.Default,
 	            "Counter": result.Integer,
 	            "datetime": result.DateTime,    // For calculated columns, stored as datetime;#value
 	            "AllDayEvent": result.Boolean,
@@ -2863,12 +2868,13 @@
 	            "float": result.Number, // For calculated columns, stored as float;#value
 	            "RelatedItems": result.JSON,
 
-	            "Default": identity
+	            "Default": "1" //identity
 	        };
+*/
+	        //return (result[objectType] || identity)(v);
 
-	        return (result[objectType] || identity)(v);
 
-	/*
+	
 	        switch (objectType) {
 
 	            case "Text":
@@ -2934,7 +2940,7 @@
 	                break;
 	        }
 	        return colValue;
-	 */
+	 
 	    }
 
 	    function intToJsonObject(s) {
