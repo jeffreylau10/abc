@@ -25,3 +25,18 @@ index.1.html > sample of a page with Submit button disabled and selectable upon 
 also with mixin for ComponentVisibilityMixin to check if the scroll was into view
 
 Waiting placeholder - https://matthewroach.github.io/react-placeholder/
+
+Sample WW code, there must be a script with priority 0    
+<div id="root">
+        <!-- this portion is managed by react -->
+    </div>
+<script type="text/javascript" src="/SiteAssets/pnp-ww.js"
+          ww-appname="HelloWorld"
+          ww-appscripts=
+            '[{"src": "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js", "priority":0},
+              {"src": "https://unpkg.com/react@15/dist/react.js", "priority":1},
+              {"src": "https://unpkg.com/react-dom@15/dist/react-dom.js", "priority":1},
+              {"src": "/siteassets/fetch.js", "priority":1},                           
+              {"src": "/siteassets/test.js", "priority":2}             
+             ]'>
+  </script></div>
