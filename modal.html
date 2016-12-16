@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script type="text/javascript">
+        function onEditTimeOffLoad() {
+            var itemId = window.frameElement.dialogArgs;
+            var pageId = '<%=Page.ClientID %>';
+            __doPostBack(pageId, itemId);
+        }
+
+        function BtnEditTimeOffCancel_Click() {
+            SP.UI.ModalDialog.commonModalDialogClose(SP.UI.DialogResult.cancel,'Cancelled clicked');
+        }
+
+        function BtnEditTimeOffOk_Click(data) {                            
+                SP.UI.ModalDialog.commonModalDialogClose(SP.UI.DialogResult.OK, data);            
+        }
+    </script>
+            <form>
+                <input type="button" onclick="BtnEditTimeOffOk_Click(1)" value="select 1" />
+                <input type="button" onclick="BtnEditTimeOffOk_Click(2)" value="select 2" />
+
+                <input type="button" onclick="BtnEditTimeOffCancel_Click()" value="Cancel" />
+            </form>
+    </body>
+
+</html>
