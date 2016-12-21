@@ -55,3 +55,9 @@ SPList myList;
 SPField titleField = myList.Fields.GetField("Title");
 field.Hidden = true;
 field.Update();
+
+LODASH
+https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js
+
+Excel to JSON converter
+https://shancarter.github.io/mr-data-converter/
